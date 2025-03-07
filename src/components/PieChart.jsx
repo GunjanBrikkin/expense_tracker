@@ -1,7 +1,18 @@
 import React from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#AF19FF"];
+const COLORS = [
+  "#3366CC", // Blue
+  "#DC3912", // Red
+  "#FF9900", // Orange
+  "#109618", // Green
+  "#990099", // Purple
+  "#0099C6", // Teal
+  "#DD4477", // Pink
+  "#66AA00", // Lime
+  "#B82E2E", // Dark Red
+  "#316395", // Dark Blue
+];
 
 const PieChartComponent = ({ data }) => {
   if (!Array.isArray(data)) {
@@ -28,8 +39,6 @@ const PieChartComponent = ({ data }) => {
       <PieChart width={400} height={400}>
         <Pie
           data={formattedData}
-          cx="50%"
-          cy="50%"
           outerRadius={120}
           fill="#8884d8"
           dataKey="amount"
