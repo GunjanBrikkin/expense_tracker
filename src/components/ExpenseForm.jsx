@@ -2,7 +2,6 @@ import { useState } from "react";
 
 const ExpenseForm = ({ addExpenseHandler }) => {
   const [state, setState] = useState({ type: "", amount: "" });
-  console.log("state", state);
 
   const clickTheBar = (e) => {
     e.preventDefault();
@@ -12,7 +11,6 @@ const ExpenseForm = ({ addExpenseHandler }) => {
     }
 
     addExpenseHandler(state);
-    setState({ type: "", amount: "" });
   };
 
   return (
