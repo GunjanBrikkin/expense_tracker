@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ExpenseList = ({ showExpenseList }) => {
+const ExpenseList = ({ showExpenseList, categoryToEmoji }) => {
   console.log("showExpenseList", showExpenseList);
 
   return (
@@ -12,7 +12,10 @@ const ExpenseList = ({ showExpenseList }) => {
         <ul className="ui list">
           {showExpenseList.map((expense) => (
             <li key={expense.id} className="item">
-              <strong>{expense.type}</strong>: ₹{expense.amount}
+              <strong>
+                {categoryToEmoji[expense.type] || "❓"} {expense.type}
+              </strong>
+              : ₹{expense.amount}
               <Link
                 to="/deleteit"
                 state={{ expense }} // Ensure only expense is passed
